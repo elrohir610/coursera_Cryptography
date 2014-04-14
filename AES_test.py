@@ -11,12 +11,11 @@ def hex_2_string(str_i):
 	return str_o
 
 ciphertext = '770b80259ec33beb2561358a9f2dc617e46218c0a53cbeca695ae45faa8952aa0e311bde9d4e01726d3184c34451'
-iv = ciphertext[0:32]
-iv= hex_2_string(iv)
 key = '36f18357be4dbd77f050515c73fcf9f2'
+
+iv= hex_2_string(ciphertext[0:32])
 key = hex_2_string(key)
-ciphertext = ciphertext[32:]
-ciphertext = hex_2_string(ciphertext)
+ciphertext = hex_2_string(ciphertext[32:])
 
 ########## CBC
 #mode = AES.MODE_CBC
