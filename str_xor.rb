@@ -12,15 +12,8 @@ def strxor(a, b)     # xor two strings of different lengths
     return c
 end
 
-str1 = "50617920426f622031303024"
-str2 = "50617920426f622035303024"
-
-str3 = strxor(str1,str2)
-str4 = "20814804c1767293b99f1d9cab3bc3e7 ac1e37bfb15599e5f40eef805488281d"
-
-puts strxor(str3,str4)
-
-str5 = "c0"
+str5 = "4a"
 str6 = "01"
+str7 = strxor(str5,str6)
+puts strxor(str7,"b4")
 
-puts strxor(str5,str6)

@@ -43,10 +43,10 @@ b3 = ciphertext[96:]
 
 po = PaddingOracle()
 
-#guess b1
-actual = ''
+#guess b2
+actual = 'b7'
 #for i in range(16):
-i= 0
+i= 1
 
 for j in range(256):
 	guess = int_2_hexstr(j)
@@ -55,11 +55,10 @@ for j in range(256):
 	pad = ''
 	for k in range(pad_l):
 		pad = pad + int_2_hexstr(pad_l)
-	target = b1[(30-i*2):]
-	target = strxor(target,attemp)
-	target = strxor(target,pad)
-	q_str = iv + b1[0:(30-i*2)] + target
-		
+	target = strxor(b2[(30-i*2):],attemp)
+	q_str = iv + b1+ b2[0:(30-i*2)] + strxor(target,pad)
+	
 	if(po.query(q_str)):
 		print q_str
 		print attemp
+		break
